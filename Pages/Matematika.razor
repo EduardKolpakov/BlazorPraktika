@@ -1,0 +1,46 @@
+﻿@page "/math"
+
+<PageTitle>Math</PageTitle>
+
+<input type="int" @bind="a"/>
+<input type="int" @bind="b"/>
+<button class="btn btn-primary" @onclick="plus">+</button>
+<button class="btn btn-primary" @onclick="minus">-</button>
+<button class="btn btn-primary" @onclick="multiply">*</button>
+<button class="btn btn-primary" @onclick="divide">/</button>
+<input type="text" disabled="true" @bind="c"/>
+<input type="text" disabled="true" @bind="d"/>
+
+@code
+{
+	int a = 0;
+	int b = 0;
+	int c = 0;
+	string d = "";
+	private void plus()
+	{
+		c = a + b;
+		d = "";
+	}
+	private void minus()
+	{
+		c = a - b;
+		d = "";
+	}
+	private void multiply()
+	{
+		c = a * b;
+		d = "";
+	}
+	private void divide()
+	{
+		try {
+			c = a / b;
+			d = "";
+		}
+		catch (DivideByZeroException)
+		{
+			d = "Do not divide by 0";
+		}
+	}
+}
