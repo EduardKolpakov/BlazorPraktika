@@ -1,0 +1,16 @@
+﻿@page "/rand"
+
+<PageTitle>Random</PageTitle>
+
+<div>
+	<button class="button btn-primary" @onclick="rand">Generate</button>
+</div>
+<h1>@a</h1>
+@code
+{
+	long a;
+	void rand()
+	{
+		a = Random.Shared.Next(0, int.MaxValue);
+	}
+}

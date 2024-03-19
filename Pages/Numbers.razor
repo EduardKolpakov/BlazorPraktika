@@ -1,0 +1,21 @@
+﻿@page "/nums"
+
+<PageTitle>Numbers</PageTitle>
+
+<input type="number" @bind=a/>
+<button class="btn btn-primary" @onclick="add">Count</button>
+<input type="number" disabled="true" @bind=summ/>
+@code
+{
+	long summ = 0;
+	long a;
+	void add()
+	{
+		summ = 0;
+		for (int i = 1; i <= a; i++)
+		{
+			summ += i;
+		}
+		a = 0;
+	}
+}
