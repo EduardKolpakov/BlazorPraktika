@@ -2,13 +2,13 @@
 
 <PageTitle>Factorials</PageTitle>
 
-<input type="int" @bind="a"/>
+<input type="number" @bind="a"/>
 <button class="btn btn-primary" @onclick="factorial">!</button>
 <button class="btn btn-primary" @onclick="factorial2">!!</button>
-<input type="int" disabled="true" @bind="b"/>
+<input type="number" disabled="true" @bind="b"/>
 @code {
-	int a = 0;
-	int b = 0;
+	long a = 0;
+	long b = 0;
 	private void factorial()
 	{
 		b = 1;

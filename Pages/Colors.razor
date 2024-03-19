@@ -1,0 +1,19 @@
+﻿@page "/colors"
+
+<PageTitle>Colors</PageTitle>
+<style>
+    body {
+        background-color: @col;
+    }
+</style>
+<button class="btn btn-primary" @onclick="changer">Change</button>
+
+
+@code
+{
+    string col = "#000000";
+    public void changer()
+    {
+        col = String.Format("#{0:X6}", Random.Shared.Next(0x1000000));
+    }
+}
